@@ -10,7 +10,7 @@ function Dashboard() {
   const [transactionDescriptionData, setTransactionDescriptionData] = useState('')
 
   const fetchPrice = async function() {
-    return await axios.get(`https://api.blockchain.info/charts/transactions-per-second?timespan=5weeks&rollingAverage=8hours&format=json`)
+    return await axios.get('https://api.blockchain.info/charts/transactions-per-second?timespan=5weeks&rollingAverage=8hours&format=json')
                   .then((response) => {
                     // console.log(response.data);
                     setTransactionData(response.data.values.splice(0, 100))
